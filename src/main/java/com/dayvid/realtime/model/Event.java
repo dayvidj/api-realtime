@@ -1,5 +1,6 @@
 package com.dayvid.realtime.model;
 
+import com.dayvid.realtime.dto.EventDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,4 +22,9 @@ public class Event {
     private String payload;
     private LocalDateTime timestamp;
 
+    public Event(EventDTO eventDTO) {
+        this.type = eventDTO.type();
+        this.payload = eventDTO.payload();
+        this.timestamp = LocalDateTime.now();
+    }
 }
