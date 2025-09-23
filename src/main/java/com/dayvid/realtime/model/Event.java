@@ -18,8 +18,8 @@ public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String type;
-    private String payload;
+    private String type; // Categoria ou tipo do evento (ex.: "click", "view")
+    private String payload; // Dados em JSON relacionados ao evento
     private LocalDateTime timestamp;
 
     public Event(EventDTO eventDTO) {
